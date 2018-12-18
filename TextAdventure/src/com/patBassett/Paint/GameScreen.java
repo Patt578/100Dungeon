@@ -1,8 +1,6 @@
 package com.patBassett.Paint;
 
-import com.patBassett.Paint.RoomComponents.Hallway;
-import com.patBassett.Paint.RoomComponents.HallwayWithRightExit;
-import com.patBassett.Paint.RoomComponents.Wall;
+import com.patBassett.Paint.RoomComponents.HallwayWithLeftExit;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,15 +17,15 @@ public class GameScreen implements KeyListener {
 
     JFrame window;
     Container container;
-    JPanel titlePanel, startPanel, mainPanel, mapPanel;
+    JPanel titlePanel, startPanel, mainPanel, mapPanel, characterPanel;
     JLabel title;
     Font titleFont = new Font("Times New Roman",Font.PLAIN,80);
     JButton startButton,load,exit;
     JTextField textField;
 
-    String tempName;
 
 
+    Rectangle rect = new Rectangle(1000,800);
 
 
 
@@ -38,11 +36,24 @@ public class GameScreen implements KeyListener {
         buildScreen();
         container = window.getContentPane();
         buildTitlePanel();
-       buildMain();
+
 
 
 
         }
+
+        public void buildCharacterCreation(){
+        characterPanel = new ClassSelection();
+            characterPanel.setBounds(rect);
+
+                container.add(characterPanel);
+
+
+
+
+        }
+
+
 
         public void buildTitlePanel(){
 
@@ -69,7 +80,7 @@ public class GameScreen implements KeyListener {
                     window.getContentPane().removeAll();
                     window.repaint();
 
-                  buildMain();
+                  buildCharacterCreation();
                 }
             });
 
@@ -114,7 +125,7 @@ public class GameScreen implements KeyListener {
         }
 
         public void buildMain(){
-        mainPanel = new HallwayWithRightExit();
+        mainPanel = new HallwayWithLeftExit();
         mainPanel.setBounds(3,3,800,600);
         mainPanel.setBackground(Color.BLACK);
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE,3));

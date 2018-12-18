@@ -13,17 +13,18 @@ public class HallwayWithLeftExit extends JPanel {
 
         g.setColor(Color.WHITE);
 
-        g.drawLine(30,0,360,200);
-        g.drawLine(30,600,360,280);
-        g.drawLine(360,200,360,280);
+        g.drawLine(30,0,280,150);
+        g.drawLine(30,600,280,350);
+        g.drawLine(280,150,280,350);
 
-        g.drawLine(770,0,560,150);
-        g.drawLine(770,600,560,350);
-        g.drawLine(560,150,560,350);
+        g.drawLine(770,0,460,200);
+        g.drawLine(770,600,460,280);
+        g.drawLine(460,200,460,280);
 
-        g.drawLine(500,200,500,280);
-        g.drawLine(500,200,560,200);
-        g.drawLine(500,280,560,280);
+
+        g.drawLine(350,200,280,200);
+       g.drawLine(350,200,350,280);
+        g.drawLine(350,280,280,280);
     }
 
 }

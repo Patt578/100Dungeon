@@ -1,5 +1,9 @@
 package com.patBassett;
 
+import com.patBassett.NPCs.NPCs;
+
+import java.util.ArrayList;
+
 public class Player {
     int health = 50;
     int mana = 50;
@@ -55,6 +59,9 @@ public class Player {
 
 
 
+    public static ArrayList<NPCs> party = new ArrayList<>();
+
+
     Inventory inv;
 
 
@@ -67,6 +74,8 @@ public class Player {
         this.Vigor = vigor;
         this.x = x;
         this.y = y;
+
+
 
     }
 
