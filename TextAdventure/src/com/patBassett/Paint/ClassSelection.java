@@ -1,7 +1,11 @@
 package com.patBassett.Paint;
 
+import com.patBassett.Player;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ClassSelection extends JPanel {
 
@@ -11,8 +15,11 @@ public class ClassSelection extends JPanel {
     JPanel titlePanel;
     Font titleFont = new Font("Times New Roman",Font.PLAIN,60);
 
+    String playerClass;
 
-    public ClassSelection(){
+
+
+    public ClassSelection(Player player){
 
 
         titlePanel = new JPanel();
@@ -57,11 +64,71 @@ public class ClassSelection extends JPanel {
         ranger.setBounds(500,500,100,100);
         wizard.setBounds(600,500,100,100);
 
-//        human.setToolTipText("Selection of this race includes:    +1 to all ability scores");
-//        elf.setToolTipText("Selection of this race includes:    +2 Dexterity  +2 to Wisdom");
-//        dwarf.setToolTipText("Selection of this race includes:    +2 Strength  +2 Vigor");
-//        gnome.setToolTipText("Selection of this race includes:    +2 Intelligence  +2 Dexterity");
-//
+        paladin.setToolTipText("A strong upfront holy warrior, specializing in party buffs and safety while providing great front-line utility.");
+        priest.setToolTipText("An excellent back-line support mage, specializing in healing, CC, and utility spells to provide the party survivability and buffs.");
+        warrior.setToolTipText("A tanky front-line fighter, specializing in cleave damage, damage reduction, and exceptional single target damage.");
+        rouge.setToolTipText("A stealthy hard to hit assassin, specializing in the use of of poison, massive single target crits, and exceptional evasion.");
+        ranger.setToolTipText("A both up close and long range class, specializing in the use of bows, crossbows, and shortswords to provide a flexible single target damage.");
+        wizard.setToolTipText("Blow shit up while being extremely squishy.");
+
+
+        paladin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "paladin";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+
+        priest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "priest";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+        warrior.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "warrior";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+        rouge.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "rouge";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+        ranger.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "ranger";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+        wizard.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                playerClass = "wizard";
+                player.setPlayerClass(playerClass);
+                new GameScreen().cleartoMain(player);
+            }
+        });
+
+
 
 
         this.add(paladin);

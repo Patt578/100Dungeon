@@ -1,5 +1,7 @@
 package com.patBassett.Paint;
 
+import com.patBassett.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,7 +16,12 @@ public class RaceSelection extends JPanel {
     Font titleFont = new Font("Times New Roman",Font.PLAIN,60);
 
 
-    public RaceSelection(){
+    String race;
+
+
+
+
+    public RaceSelection(Player player){
 
 
         titlePanel = new JPanel();
@@ -66,9 +73,52 @@ public class RaceSelection extends JPanel {
 
 
 
+                race = "human";
+                player.setRace(race);
+                new GameScreen().clear(player);
 
             }
         });
+
+        elf.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                race = "elf";
+                player.setRace(race);
+                new GameScreen().clear(player);
+
+
+            }
+        });
+
+        dwarf.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                race = "dwarf";
+                player.setRace(race);
+                new GameScreen().clear(player);
+
+
+            }
+        });
+
+        gnome.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                race = "gnome";
+                player.setRace(race);
+                new GameScreen().clear(player);
+
+
+            }
+        });
+
+
+
 
 
         this.add(human);
@@ -83,4 +133,7 @@ public class RaceSelection extends JPanel {
 
 
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.patBassett;
 
 import com.patBassett.NPCs.NPCs;
+import com.patBassett.Paint.Inventory;
 
 import java.util.ArrayList;
 
@@ -8,7 +9,10 @@ public class Player {
     int health = 50;
     int mana = 50;
     int coin = 0;
-    String name;
+
+
+
+    String name, race, playerClass;
 
     int xPos= 0;
     int yPos = 0;
@@ -19,11 +23,11 @@ public class Player {
     boolean facingEast= false;
     boolean facingWest = false;
 
-    int Strength;
-    int Dexteritry;
-    int Intelligence;
-    int Charisma;
-    int Vigor;
+    int Strength =10;
+    int Dexteritry = 10;
+    int Intelligence = 10;
+    int Charisma = 10;
+    int Vigor = 10;
 
     int initiative;
     int dodge;
@@ -59,19 +63,15 @@ public class Player {
 
 
 
+
     public static ArrayList<NPCs> party = new ArrayList<>();
 
 
     Inventory inv;
 
 
-    public Player(String name, int strength, int dexteritry, int intelligence, int charisma, int vigor, int x,int y) {
-        this.name = name;
-        this.Strength = strength;
-        this.Dexteritry = dexteritry;
-        this.Intelligence = intelligence;
-        this.Charisma = charisma;
-        this.Vigor = vigor;
+    public Player(String name,int x,int y, String race, String playerClass) {
+
         this.x = x;
         this.y = y;
 
@@ -151,7 +151,29 @@ public class Player {
     }
 
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    public String getPlayerClass() {
+        return playerClass;
+    }
+
+    public void setPlayerClass(String playerClass) {
+        this.playerClass = playerClass;
+    }
 
 
 
